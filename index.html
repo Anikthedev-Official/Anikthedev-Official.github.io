@@ -8,6 +8,14 @@
 <body>
     <h1>Hi im Anikthedev i made a little page about eaglercraft launcher hope you like it!</h1>
     <br>" target="_blan
-    <a id="WasmOn/off" href="javascript:var w=window.open('about:blank','_blank');fetch('https://github.com/Anikthedev-Official/Wasm-builds/releases/download/v1.0.0/EaglercraftX_1.8_WASM-GC_Offline_Download.html').then(r=>r.text()).then(h=>w.document.write(h));">Wanna use Wasm latest? click me!</a>
+    <a id="WasmOn/off" 
+    href="javascript:(async function(){
+      let w = window.open('about:blank','_blank');
+      let res = await fetch('https://github.com/Anikthedev-Official/Wasm-builds/releases/download/v1.0.0/EaglercraftX_1.8_WASM-GC_Offline_Download.html');
+      let text = await res.text();
+      w.document.open();
+      w.document.write(text);
+      w.document.close();
+  })()">Wanna use Wasm latest? click me!</a>
 </body>
 </html>
