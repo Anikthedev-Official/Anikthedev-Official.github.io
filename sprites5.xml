@@ -1,0 +1,8 @@
+<TextureAtlas imagePath="sprites5.png">
+	<SubTexture name="trickyyy0001.png" x="0" y="0" width="89" height="99"/>
+	<SubTexture name="trickyyy0002.png" x="0" y="101" width="86" height="99"/>
+	<SubTexture name="trickyyy0003.png" x="174" y="0" width="76" height="99"/>
+	<SubTexture name="trickyyy0004.png" x="91" y="0" width="81" height="99"/>
+	<SubTexture name="trickyyy0005.png" x="88" y="101" width="84" height="99"/>
+	<SubTexture name="trickyyy0006.png" x="88" y="101" width="84" height="99"/>
+</TextureAtlas>

@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MC mini animations</title>
+  <style>
+body {
+  margin: 50px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 100px; 
+  background: #393a3b;
+}
+
+.textbox {
+  position: relative;
+  width: 500px;                
+  padding: 30px 30px 30px 180px; 
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #525354;
+  font-size: 18px;               
+  min-height: 180px;             
+}
+
+.anim-canvas {
+  position: absolute;
+  top: 30px;  
+  left: 30px;  
+  width: 125px;
+  height: 125px;
+  border: 1px solid #999;
+  border-radius: 8px;
+  background: #eee;  
+}
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: red;
+  font-size: 18px;
+  -webkit-text-stroke: 0.5px #f5f5f5; /* outline with light color */
+  font-weight: normal; /* try to reduce default bold look */
+}
+
+  </style>
+</head>
+<body>
+<h1> Hi! Im anikthedev here. I made these simple animation/mini animtions using adobe flash cs6, shoebox texture packer and java script </h1>
+<div class="textbox">
+  <canvas class="anim-canvas" id="anim1" width="125" height="125"></canvas>
+  Yo! Gimme a smoke.
+</div>
+
+<div class="textbox">
+  <canvas class="anim-canvas" id="anim2" width="125" height="125"></canvas>
+  *criket noises* hes dead.....
+</div>
+
+<div class="textbox">
+  <canvas class="anim-canvas" id="anim3" width="125" height="125"></canvas>
+  deimos why did you do that!!.
+</div>
+
+<div class="textbox">
+  <canvas class="anim-canvas" id="anim4" width="125" height="125"></canvas>
+  ?.
+</div>
+<div class="textbox">
+  <canvas class="anim-canvas" id="anim5" width="125" height="125"></canvas>
+  OMFG!!!!!!!.
+</div>
+
+
+<script>
+class Animation {
+  constructor(canvasId, xmlFile, fps = 40) {
+    this.canvas = document.getElementById(canvasId);
+    this.ctx = this.canvas.getContext('2d');
+    this.frames = [];
+    this.frame = 0;
+    this.fps = fps;
+    this.frameDuration = 1000 / fps;
+    this.lastTime = 0;
+    this.img = new Image();
+    this.loadXML(xmlFile);
+  }
+
+  loadXML(xmlFile) {
+    fetch(xmlFile)
+      .then(res => res.text())
+      .then(str => (new DOMParser()).parseFromString(str, "text/xml"))
+      .then(xml => {
+        const subTextures = xml.getElementsByTagName('SubTexture');
+        for (let i = 0; i < subTextures.length; i++) {
+          const t = subTextures[i];
+          this.frames.push({
+            x: parseInt(t.getAttribute('x')),
+            y: parseInt(t.getAttribute('y')),
+            w: parseInt(t.getAttribute('width')),
+            h: parseInt(t.getAttribute('height'))
+          });
+        }
+        this.img.src = xml.documentElement.getAttribute('imagePath');
+        this.img.onload = () => requestAnimationFrame(this.loop.bind(this));
+      })
+      .catch(err => console.error("Failed to load XML:", xmlFile, err));
+  }
+
+  loop(timestamp) {
+    if (!this.lastTime) this.lastTime = timestamp;
+    const delta = timestamp - this.lastTime;
+
+    if (delta >= this.frameDuration) {
+      this.frame = (this.frame + 1) % this.frames.length;
+      this.lastTime = timestamp;
+    }
+
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    const f = this.frames[this.frame];
+    if (f) {
+      const scale = Math.min(this.canvas.width / f.w, this.canvas.height / f.h);
+      const dw = f.w * scale;
+      const dh = f.h * scale;
+      const dx = (this.canvas.width - dw) / 2;
+      const dy = (this.canvas.height - dh) / 2;
+      this.ctx.drawImage(this.img, f.x, f.y, f.w, f.h, dx, dy, dw, dh);
+    }
+
+    requestAnimationFrame(this.loop.bind(this));
+  }
+}
+
+// Initialize three separate animations
+new Animation('anim1', 'sprites.xml');
+new Animation('anim2', 'sprites2.xml');
+new Animation('anim3', 'sprites3.xml');
+new Animation('anim4', 'sprites4.xml');
+new Animation('anim5', 'sprites5.xml');
+</script>
+
+</body>
+</html>

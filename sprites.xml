@@ -1,0 +1,26 @@
+<TextureAtlas imagePath="sprites.png">
+	<SubTexture name="Untitled-10001.png" x="0" y="203" width="88" height="100"/>
+	<SubTexture name="Untitled-10002.png" x="0" y="102" width="88" height="99"/>
+	<SubTexture name="Untitled-10003.png" x="0" y="0" width="88" height="100"/>
+	<SubTexture name="Untitled-10004.png" x="180" y="0" width="88" height="100"/>
+	<SubTexture name="Untitled-10005.png" x="360" y="0" width="88" height="100"/>
+	<SubTexture name="Untitled-10006.png" x="270" y="408" width="88" height="100"/>
+	<SubTexture name="Untitled-10007.png" x="270" y="306" width="88" height="100"/>
+	<SubTexture name="Untitled-10008.png" x="270" y="204" width="88" height="100"/>
+	<SubTexture name="Untitled-10009.png" x="270" y="102" width="88" height="100"/>
+	<SubTexture name="Untitled-10010.png" x="270" y="0" width="88" height="100"/>
+	<SubTexture name="Untitled-10011.png" x="180" y="408" width="88" height="100"/>
+	<SubTexture name="Untitled-10012.png" x="180" y="306" width="88" height="100"/>
+	<SubTexture name="Untitled-10013.png" x="180" y="204" width="88" height="100"/>
+	<SubTexture name="Untitled-10014.png" x="180" y="102" width="88" height="100"/>
+	<SubTexture name="Untitled-10015.png" x="180" y="102" width="88" height="100"/>
+	<SubTexture name="Untitled-10016.png" x="360" y="102" width="88" height="100"/>
+	<SubTexture name="Untitled-10017.png" x="90" y="408" width="88" height="100"/>
+	<SubTexture name="Untitled-10018.png" x="90" y="306" width="88" height="100"/>
+	<SubTexture name="Untitled-10019.png" x="90" y="204" width="88" height="100"/>
+	<SubTexture name="Untitled-10020.png" x="90" y="102" width="88" height="100"/>
+	<SubTexture name="Untitled-10021.png" x="90" y="0" width="88" height="100"/>
+	<SubTexture name="Untitled-10022.png" x="0" y="407" width="88" height="100"/>
+	<SubTexture name="Untitled-10023.png" x="0" y="305" width="88" height="100"/>
+	<SubTexture name="Untitled-10024.png" x="0" y="305" width="88" height="100"/>
+</TextureAtlas>

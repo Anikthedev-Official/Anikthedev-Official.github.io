@@ -1,0 +1,27 @@
+<TextureAtlas imagePath="sprites4.png">
+	<SubTexture name="hank0001.png" x="114" y="303" width="50" height="99"/>
+	<SubTexture name="hank0002.png" x="114" y="101" width="50" height="99"/>
+	<SubTexture name="hank0003.png" x="59" y="303" width="53" height="99"/>
+	<SubTexture name="hank0004.png" x="0" y="404" width="56" height="99"/>
+	<SubTexture name="hank0005.png" x="0" y="303" width="57" height="99"/>
+	<SubTexture name="hank0006.png" x="0" y="101" width="59" height="99"/>
+	<SubTexture name="hank0007.png" x="0" y="101" width="59" height="99"/>
+	<SubTexture name="hank0008.png" x="0" y="0" width="68" height="99"/>
+	<SubTexture name="hank0009.png" x="0" y="0" width="68" height="99"/>
+	<SubTexture name="hank0010.png" x="0" y="0" width="68" height="99"/>
+	<SubTexture name="hank0011.png" x="0" y="0" width="68" height="99"/>
+	<SubTexture name="hank0012.png" x="0" y="0" width="68" height="99"/>
+	<SubTexture name="hank0013.png" x="0" y="0" width="68" height="99"/>
+	<SubTexture name="hank0014.png" x="0" y="0" width="68" height="99"/>
+	<SubTexture name="hank0015.png" x="0" y="0" width="68" height="99"/>
+	<SubTexture name="hank0016.png" x="0" y="0" width="68" height="99"/>
+	<SubTexture name="hank0017.png" x="0" y="0" width="68" height="99"/>
+	<SubTexture name="hank0018.png" x="0" y="202" width="58" height="99"/>
+	<SubTexture name="hank0019.png" x="58" y="404" width="56" height="99"/>
+	<SubTexture name="hank0020.png" x="60" y="202" width="53" height="99"/>
+	<SubTexture name="hank0021.png" x="61" y="101" width="51" height="99"/>
+	<SubTexture name="hank0022.png" x="115" y="202" width="50" height="99"/>
+	<SubTexture name="hank0023.png" x="70" y="0" width="50" height="99"/>
+	<SubTexture name="hank0024.png" x="70" y="0" width="50" height="99"/>
+	<SubTexture name="hank0025.png" x="70" y="0" width="50" height="99"/>
+</TextureAtlas>
