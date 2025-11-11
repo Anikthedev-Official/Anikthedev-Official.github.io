@@ -1,0 +1,16 @@
+<TextureAtlas imagePath="silly.png">
+	<SubTexture name="SILLY0001.png" x="64" y="173" width="61" height="87"/>
+	<SubTexture name="SILLY0002.png" x="0" y="0" width="63" height="85"/>
+	<SubTexture name="SILLY0003.png" x="0" y="174" width="62" height="84"/>
+	<SubTexture name="SILLY0004.png" x="127" y="0" width="61" height="86"/>
+	<SubTexture name="SILLY0005.png" x="0" y="349" width="62" height="86"/>
+	<SubTexture name="SILLY0006.png" x="64" y="352" width="61" height="86"/>
+	<SubTexture name="SILLY0007.png" x="0" y="87" width="62" height="85"/>
+	<SubTexture name="SILLY0008.png" x="64" y="87" width="61" height="84"/>
+	<SubTexture name="SILLY0009.png" x="64" y="262" width="61" height="88"/>
+	<SubTexture name="SILLY0010.png" x="0" y="260" width="62" height="87"/>
+	<SubTexture name="SILLY0011.png" x="127" y="88" width="58" height="87"/>
+	<SubTexture name="SILLY0012.png" x="127" y="177" width="54" height="87"/>
+	<SubTexture name="SILLY0013.png" x="127" y="266" width="52" height="89"/>
+	<SubTexture name="SILLY0014.png" x="127" y="266" width="52" height="89"/>
+</TextureAtlas>
