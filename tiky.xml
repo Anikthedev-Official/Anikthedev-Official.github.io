@@ -1,0 +1,13 @@
+<TextureAtlas imagePath="tiky.png">
+	<SubTexture name="tikkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy0001.png" x="0" y="0" width="100" height="94"/>
+	<SubTexture name="tikkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy0002.png" x="0" y="96" width="98" height="95"/>
+	<SubTexture name="tikkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy0003.png" x="0" y="193" width="96" height="94"/>
+	<SubTexture name="tikkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy0004.png" x="0" y="388" width="96" height="97"/>
+	<SubTexture name="tikkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy0005.png" x="0" y="289" width="96" height="97"/>
+	<SubTexture name="tikkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy0006.png" x="100" y="100" width="70" height="91"/>
+	<SubTexture name="tikkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy0007.png" x="98" y="377" width="77" height="90"/>
+	<SubTexture name="tikkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy0008.png" x="177" y="0" width="72" height="100"/>
+	<SubTexture name="tikkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy0009.png" x="102" y="0" width="73" height="98"/>
+	<SubTexture name="tikkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy0010.png" x="98" y="285" width="92" height="90"/>
+	<SubTexture name="tikkkkkyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy0011.png" x="98" y="193" width="95" height="90"/>
+</TextureAtlas>
