@@ -1,0 +1,35 @@
+<TextureAtlas imagePath="fire.png">
+	<SubTexture name="fire0001.png" x="364" y="117" width="48" height="55"/>
+	<SubTexture name="fire0002.png" x="313" y="117" width="49" height="55"/>
+	<SubTexture name="fire0003.png" x="261" y="173" width="50" height="55"/>
+	<SubTexture name="fire0004.png" x="158" y="0" width="50" height="54"/>
+	<SubTexture name="fire0005.png" x="210" y="0" width="49" height="54"/>
+	<SubTexture name="fire0006.png" x="209" y="114" width="50" height="54"/>
+	<SubTexture name="fire0007.png" x="53" y="57" width="51" height="55"/>
+	<SubTexture name="fire0008.png" x="261" y="0" width="50" height="55"/>
+	<SubTexture name="fire0009.png" x="209" y="170" width="50" height="55"/>
+	<SubTexture name="fire0010.png" x="0" y="113" width="51" height="55"/>
+	<SubTexture name="fire0011.png" x="0" y="0" width="52" height="55"/>
+	<SubTexture name="fire0012.png" x="0" y="57" width="51" height="54"/>
+	<SubTexture name="fire0013.png" x="0" y="170" width="51" height="55"/>
+	<SubTexture name="fire0014.png" x="157" y="116" width="50" height="55"/>
+	<SubTexture name="fire0015.png" x="54" y="0" width="50" height="55"/>
+	<SubTexture name="fire0016.png" x="157" y="58" width="50" height="56"/>
+	<SubTexture name="fire0017.png" x="364" y="59" width="49" height="56"/>
+	<SubTexture name="fire0018.png" x="313" y="174" width="49" height="57"/>
+	<SubTexture name="fire0019.png" x="313" y="58" width="49" height="57"/>
+	<SubTexture name="fire0020.png" x="313" y="0" width="49" height="56"/>
+	<SubTexture name="fire0021.png" x="106" y="0" width="50" height="56"/>
+	<SubTexture name="fire0022.png" x="105" y="172" width="50" height="56"/>
+	<SubTexture name="fire0023.png" x="53" y="172" width="50" height="56"/>
+	<SubTexture name="fire0024.png" x="105" y="114" width="50" height="56"/>
+	<SubTexture name="fire0025.png" x="53" y="114" width="50" height="56"/>
+	<SubTexture name="fire0026.png" x="209" y="56" width="50" height="56"/>
+	<SubTexture name="fire0027.png" x="157" y="173" width="50" height="56"/>
+	<SubTexture name="fire0028.png" x="261" y="115" width="50" height="56"/>
+	<SubTexture name="fire0029.png" x="261" y="57" width="50" height="56"/>
+	<SubTexture name="fire0030.png" x="364" y="174" width="48" height="57"/>
+	<SubTexture name="fire0031.png" x="364" y="0" width="49" height="57"/>
+	<SubTexture name="fire0032.png" x="364" y="0" width="49" height="57"/>
+	<SubTexture name="fire0033.png" x="364" y="0" width="49" height="57"/>
+</TextureAtlas>
