@@ -1,0 +1,22 @@
+<TextureAtlas imagePath="bark.png">
+	<SubTexture name="BARK0001.png" x="1284" y="1368" width="640" height="340"/>
+	<SubTexture name="BARK0002.png" x="1284" y="1026" width="640" height="340"/>
+	<SubTexture name="BARK0003.png" x="1284" y="684" width="640" height="340"/>
+	<SubTexture name="BARK0004.png" x="1284" y="342" width="640" height="340"/>
+	<SubTexture name="BARK0005.png" x="1284" y="0" width="640" height="340"/>
+	<SubTexture name="BARK0006.png" x="1926" y="1026" width="640" height="340"/>
+	<SubTexture name="BARK0007.png" x="642" y="1026" width="640" height="340"/>
+	<SubTexture name="BARK0008.png" x="642" y="684" width="640" height="340"/>
+	<SubTexture name="BARK0009.png" x="642" y="342" width="640" height="340"/>
+	<SubTexture name="BARK0010.png" x="642" y="0" width="640" height="340"/>
+	<SubTexture name="BARK0011.png" x="0" y="1368" width="640" height="340"/>
+	<SubTexture name="BARK0012.png" x="0" y="1026" width="640" height="340"/>
+	<SubTexture name="BARK0013.png" x="0" y="684" width="640" height="340"/>
+	<SubTexture name="BARK0014.png" x="0" y="342" width="640" height="340"/>
+	<SubTexture name="BARK0015.png" x="0" y="0" width="640" height="340"/>
+	<SubTexture name="BARK0016.png" x="642" y="1368" width="640" height="340"/>
+	<SubTexture name="BARK0017.png" x="1926" y="684" width="640" height="340"/>
+	<SubTexture name="BARK0018.png" x="1926" y="342" width="640" height="340"/>
+	<SubTexture name="BARK0019.png" x="1926" y="0" width="640" height="340"/>
+	<SubTexture name="BARK0020.png" x="1926" y="0" width="640" height="340"/>
+</TextureAtlas>
