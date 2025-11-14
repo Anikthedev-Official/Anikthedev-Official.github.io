@@ -1,0 +1,27 @@
+<TextureAtlas imagePath="hire!.png">
+	<SubTexture name="hire!.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0001.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0002.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0003.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0004.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0005.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0006.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0007.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0008.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0009.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0010.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0011.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0012.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0013.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0014.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0015.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0016.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0017.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0018.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0019.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0020.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0021.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0022.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0023.png" x="0" y="0" width="100" height="100"/>
+	<SubTexture name="hire!0024.png" x="0" y="0" width="100" height="100"/>
+</TextureAtlas>
