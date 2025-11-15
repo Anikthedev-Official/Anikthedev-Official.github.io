@@ -1,2 +1,134 @@
 # hehe boy my own blog shit!!!!!!!!
 anyway guys i make simple animations in adobe cs6 then export them as image sequnce then make them into a spritesheet using [ShoeBox texture packer](https://renderhjs.net/shoebox/)  then use java script to put them in my page more stuff coming soon 
+# hi in 11/15/2025 (mm/dd/yyyy)
+CODING KNOWLEDGE NEEEEDDDEEEDDDDD
+ok so make a animation in adobe flash cs6 or cs5.5 or cs5 or cs4  blah blah but if you want to USE adobe flash cs6  then use this torrent file ( these are safe dont worry i made them) [this](https://raw.githubusercontent.com/Anikthedev-Official/Anikthedev-Official.github.io/main/Adobe%20Flash%20Professional%20CS6.torrent) and [this lib](https://raw.githubusercontent.com/Anikthedev-Official/Anikthedev-Official.github.io/main/amtlib.dll)
+1. Setting Up flash cs6 crack after dowloading the the setup files from te toorent make sure to download the amtlib.dll too! then disable your internet then go to the set-up.exe open it then click try then dont put adobe account then close the setup then repoen it and click try again and your in! then install then find the folder wher you install then there should be 5 folders! go to the "Adobe Flash CS6" folder then check if it has flash.exe if it has then your done now for the final step copy the amtlib.dll there in the same directory as flash.exe then a pop up should appear saying that  it already exists then you should click "replace the file in the destination" and your done !!!!!!!!!!!!!
+2. part two! open flash and create a 40 fps animation or if a other aniamtion fps i will tell at the end ok now that you have you animation now export it as png sequence and use [ShoeBox texture packer](https://renderhjs.net/shoebox/) on the images then use the sprites.png and sprites.xml is you animation now what you need to do is put it in html which is easy
+3. HTML (FINAL) now use the template which is this (plus dont try to open this html on your pc you need to disable web sicuritry(spelling joke) to do that which i wont show ok the template is
+```
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+    body {
+  margin: 50px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 100px; 
+  background: #393a3b;
+}
+
+.textbox {
+  position: relative;
+  width: 500px;                
+  padding: 30px 30px 30px 180px; 
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #525354;
+  font-size: 18px;               
+  min-height: 180px;             
+}
+
+.anim-canvas {
+  position: absolute;
+  top: 30px;  
+  left: 30px;  
+  border: 1px solid #999;
+  border-radius: 8px;
+  background: #eee;  
+}
+/*h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: red;
+  font-size: 18px;
+  -webkit-text-stroke: 0.5px #f5f5f5; 
+  font-weight: normal;
+}*/
+
+    </style>
+</head>
+<body>
+ <canvas class="anim-canvas" id="anim" width="640" height="360"></canvas>
+<script>
+class Animation {
+  constructor(canvasId, xmlFile, fps = 40) {
+    this.canvas = document.getElementById(canvasId);
+    this.ctx = this.canvas.getContext('2d');
+    this.frames = [];
+    this.frame = 0;
+    this.fps = fps;
+    this.frameDuration = 1000 / fps;
+    this.lastTime = 0;
+    this.img = new Image();
+    this.loadXML(xmlFile);
+  }
+
+  loadXML(xmlFile) {
+    fetch(xmlFile)
+      .then(res => res.text())
+      .then(str => (new DOMParser()).parseFromString(str, "text/xml"))
+      .then(xml => {
+        const subTextures = xml.getElementsByTagName('SubTexture');
+        for (let i = 0; i < subTextures.length; i++) {
+          const t = subTextures[i];
+          this.frames.push({
+            x: parseInt(t.getAttribute('x')),
+            y: parseInt(t.getAttribute('y')),
+            w: parseInt(t.getAttribute('width')),
+            h: parseInt(t.getAttribute('height'))
+          });
+        }
+        this.img.src = xml.documentElement.getAttribute('imagePath');
+        this.img.onload = () => requestAnimationFrame(this.loop.bind(this));
+      })
+      .catch(err => console.error("Failed to load XML:", xmlFile, err));
+  }
+
+  loop(timestamp) {
+    if (!this.lastTime) this.lastTime = timestamp;
+    const delta = timestamp - this.lastTime;
+
+    if (delta >= this.frameDuration) {
+      this.frame = (this.frame + 1) % this.frames.length;
+      this.lastTime = timestamp;
+    }
+
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    const f = this.frames[this.frame];
+    if (f) {
+      const scale = Math.min(this.canvas.width / f.w, this.canvas.height / f.h);
+      const dw = f.w * scale;
+      const dh = f.h * scale;
+      const dx = (this.canvas.width - dw) / 2;
+      const dy = (this.canvas.height - dh) / 2;
+      this.ctx.drawImage(this.img, f.x, f.y, f.w, f.h, dx, dy, dw, dh);
+    }
+
+    requestAnimationFrame(this.loop.bind(this));
+  }
+}
+
+new Animation ("anim", "sprites.xml")
+</script>
+</body>
+</html>
+```
+now just put your sprites.png and sprites.xml and this (save it as index.html) then upload it to a website and watch your aniamtion go 
+4. (OPTIONAL BUT NOT OPTIONAL IF YOU DONT USE 40 FPS) guys check out for the line in the template 
+```
+<script>
+class Animation {
+  constructor(canvasId, xmlFile, fps = 40) {
+```
+and specificaly 
+```
+  constructor(canvasId, xmlFile, fps = 40) {
+```
+and edit the fps there bye!
+THE END!
