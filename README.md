@@ -119,7 +119,7 @@ new Animation ("anim", "sprites.xml")
 </body>
 </html>
 ```
-now just put your sprites.png and sprites.xml and this (save it as index.html) then upload it to a website and watch your aniamtion go 
+now just put your sprites.png and sprites.xml and this (save it as index.html) then upload it to a website and watch your aniamtion go (psst if you wanna check your aniamtion before hand use this [this](https://github.com/Anikthedev-Official/Animation-Engine-V1/releases/tag/V1.0.0))
 4. (OPTIONAL BUT NOT OPTIONAL IF YOU DONT USE 40 FPS) guys check out for the line in the template 
 ```
 <script>
