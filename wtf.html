@@ -48,11 +48,15 @@ h1 {
   -webkit-text-stroke: 0.5px #f5f5f5; 
   font-weight: normal;
 }
+#myAudio {
+   display: none; 
+}
 
     </style>
 </head>
 <body>
  <canvas class="anim-canvas" id="bark" width="640" height="360"></canvas><br>
+ <audio id="myAudio" src="your-sound-file.mp3" autoplay muted loop></audio>
   <canvas class="anim-canva" id="ani" width="550" height="350"></canvas>
 <script>
 class Animation {
