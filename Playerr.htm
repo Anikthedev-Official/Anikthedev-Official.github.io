@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>XML Animation Player</title>
+
+<style>
+body {
+  background: #2f3031;
+  font-family: Arial, sans-serif;
+  color: white;
+  padding: 40px;
+}
+
+#dropArea {
+  width: 350px;
+  height: 150px;
+  border: 2px dashed #888;
+  border-radius: 12px;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  transition: 0.2s;
+}
+#dropArea.dragover {
+  background: #444;
+  border-color: #fff;
+  color: #fff;
+}
+
+#playerContainer {
+  resize: both;
+  overflow: hidden;
+  width: 260px;
+  height: 260px;
+  border: 2px solid #aaa;
+  border-radius: 12px;
+  background: #eee;
+  margin-top: 20px;
+}
+
+#playerCanvas {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+</style>
+
+</head>
+<body>
+
+<h1>XML Animation Player</h1>
+<p>Drop your <b>XML</b> file below — PNG will auto-load!</p>
+
+<div id="dropArea">Drop XML Here</div>
+
+<div id="playerContainer">
+  <canvas id="playerCanvas" width="260" height="260"></canvas>
+</div>
+
+<script>
+class XMLAnimationPlayer {
+  constructor(canvasId, fps = 40) {
+    this.canvas = document.getElementById(canvasId);
+    this.ctx = this.canvas.getContext("2d");
+
+    this.frames = [];
+    this.frame = 0;
+    this.fps = fps;
+    this.lastTime = 0;
+    this.frameDuration = 1000 / fps;
+
+    this.img = new Image();
+  }
+
+  loadXMLText(xmlText) {
+    const xml = new DOMParser().parseFromString(xmlText, "text/xml");
+
+    // AUTO-DETECT PNG FILE
+    this.autoImagePath = xml.documentElement.getAttribute("imagePath");
+    console.log("Detected imagePath:", this.autoImagePath);
+
+    const nodes = xml.getElementsByTagName("SubTexture");
+
+    this.frames = [];
+    for (let n of nodes) {
+      this.frames.push({
+        x: +n.getAttribute("x"),
+        y: +n.getAttribute("y"),
+        w: +n.getAttribute("width"),
+        h: +n.getAttribute("height")
+      });
+    }
+
+    console.log("Loaded", this.frames.length, "frames");
+  }
+
+  loadImageBlob(blob) {
+    return new Promise(resolve => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.img.src = reader.result;
+        this.img.onload = resolve;
+      };
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  async autoLoadImage(xmlFile) {
+    try {
+      const baseURL = xmlFile.webkitRelativePath
+        ? xmlFile.webkitRelativePath.replace(xmlFile.name, "")
+        : "";
+
+      const imagePath = baseURL + this.autoImagePath;
+
+      console.log("Trying auto-load:", imagePath);
+
+      const resp = await fetch(imagePath);
+      const blob = await resp.blob();
+      await this.loadImageBlob(blob);
+
+      console.log("Auto-loaded PNG:", imagePath);
+    } catch (err) {
+      throw new Error("PNG auto-load failed");
+    }
+  }
+
+  start() {
+    if (!this.frames.length) return;
+    this.lastTime = 0;
+    requestAnimationFrame(this.loop.bind(this));
+  }
+
+  loop(t) {
+    if (!this.lastTime) this.lastTime = t;
+
+    const delta = t - this.lastTime;
+
+    if (delta > this.frameDuration) {
+      this.frame = (this.frame + 1) % this.frames.length;
+      this.lastTime = t;
+    }
+
+    this.canvas.width = this.canvas.clientWidth;
+    this.canvas.height = this.canvas.clientHeight;
+
+    const f = this.frames[this.frame];
+    if (!f) return;
+
+    const scale = Math.min(
+      this.canvas.width / f.w,
+      this.canvas.height / f.h
+    );
+
+    const dw = f.w * scale;
+    const dh = f.h * scale;
+    const dx = (this.canvas.width - dw) / 2;
+    const dy = (this.canvas.height - dh) / 2;
+
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.ctx.drawImage(this.img, f.x, f.y, f.w, f.h, dx, dy, dw, dh);
+
+    requestAnimationFrame(this.loop.bind(this));
+  }
+}
+
+const player = new XMLAnimationPlayer("playerCanvas");
+const dropArea = document.getElementById("dropArea");
+
+// ================ DRAG & DROP ================
+dropArea.addEventListener("dragover", e => {
+  e.preventDefault();
+  dropArea.classList.add("dragover");
+});
+dropArea.addEventListener("dragleave", () => dropArea.classList.remove("dragover"));
+
+dropArea.addEventListener("drop", async e => {
+  e.preventDefault();
+  dropArea.classList.remove("dragover");
+
+  const files = [...e.dataTransfer.files];
+
+  const xmlFile = files.find(f => f.name.endsWith(".xml"));
+  if (!xmlFile) {
+    alert("Drop the XML file!");
+    return;
+  }
+
+  // Parse XML
+  const xmlText = await xmlFile.text();
+  player.loadXMLText(xmlText);
+
+  // Try auto-load PNG
+  try {
+    await player.autoLoadImage(xmlFile);
+    player.start();
+    return;
+  } catch (err) {
+    console.warn("Auto PNG load failed, checking for manual PNG...");
+  }
+
+  // Manual PNG fallback
+  const imgFile = files.find(f => f.type.startsWith("image"));
+  if (!imgFile) {
+    alert("PNG file missing.");
+    return;
+  }
+
+  await player.loadImageBlob(imgFile);
+  player.start();
+});
+</script>
+
+</body>
+</html>
